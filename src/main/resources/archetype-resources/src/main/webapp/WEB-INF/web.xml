@@ -1,0 +1,25 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>${artifactId}</display-name>
+  
+  <filter>
+    <filter-name>struts2.${artifactId}</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+    <init-param>
+      <param-name>actionPackages</param-name>
+      <param-value>${packageName}</param-value>
+    </init-param>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>struts2.${artifactId}</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
